@@ -4,7 +4,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Login = () => {
-  const { user, handleLogin  } = useContext(AuthContext);
+  const { user, handleLogin , handleGoogleSignin } = useContext(AuthContext);
   console.log(user);
 
   const navigate = useNavigate();
@@ -16,7 +16,8 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-   
+
+    
 
     handleLogin(email, password)
       .then(result => {
@@ -27,6 +28,18 @@ const Login = () => {
       .catch(error => console.log(error))
     
   };
+
+  const handleGoogleLogin = () => {
+    handleGoogleSignin()
+    .then(result => {
+      const user = result.user;
+      navigate(from, { replace: true });
+      
+    })
+    .catch(error => {console.error(error);})
+
+  }
+
     return (
          <div className="relative mt-5 flex flex-col justify-center  min-h-screen overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
@@ -77,7 +90,7 @@ const Login = () => {
           <div className="absolute px-5 bg-white">Or</div>
         </div>
         <div className="flex mt-4 gap-x-2">
-          <button
+          <button onClick={handleGoogleLogin}
             type="button"
             className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-yellow-600"
           >
