@@ -36,12 +36,6 @@ const Header = () => {
             </SwiperSlide>
           ))}
 
-          {/* {
-            slides.map((slide) => <SwiperSlide> <Slide
-                key={slide.id}
-                slide={slide}
-            > </Slide> </SwiperSlide>)
-          } */}
         
       </Swiper>
       

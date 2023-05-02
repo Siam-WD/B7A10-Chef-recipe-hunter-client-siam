@@ -1,15 +1,39 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Login = () => {
+  const { user, handleLogin  } = useContext(AuthContext);
+  console.log(user);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from =  location.state?.from?.pathname || '/';
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    handleLogin(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        navigate(from, { replace: true });
+        
+      })
+      .catch(error => console.log(error))
+    
+  };
     return (
-         <div className="relative mt-5 flex flex-col justify-center  overflow-hidden">
+         <div className="relative mt-5 flex flex-col justify-center  min-h-screen overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-black-700 uppercase">
           Sign in
         </h1>
-        <form className="mt-6">
+        <form onSubmit={handleSubmit} className="mt-6">
           <div className="mb-2">
             <label
               
@@ -69,7 +93,7 @@ const Login = () => {
           
           Don't have an account?
           <Link to="/register" className="font-medium text-yellow-600 hover:underline">
-            Registerf
+            Register
           </Link>
         </p>
       </div>

@@ -7,7 +7,7 @@ const RecipeCard = ({ recipe }) => {
 
   const { id, name, rating, ingredients, photo, cookingMethod } = recipe;
     const handleFavourite = () => {
-        toast.success('Added to favoutite!');
+        toast.success('Added to favourite!');
         setIsDisabled(true);
     }
   return (

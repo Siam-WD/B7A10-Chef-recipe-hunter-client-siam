@@ -3,7 +3,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-const ChefCard = ({ chef }) => {
+const   ChefCard = ({ chef }) => {
 
   const [chefInfo, setShefInfo] = useState(null);
 
