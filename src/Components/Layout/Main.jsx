@@ -1,21 +1,21 @@
-import React from 'react';
-import Navbar from '../Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
-import Footer from '../Footer/Footer';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React from "react";
+import Navbar from "../Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Main = () => {
-    return (
-        <div>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-           <div  className='mt-auto mx-auto'>
-            <Footer></Footer>
+  return (
+    <div>
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+      <div className="mt-auto mx-auto">
+        <Footer></Footer>
         <ToastContainer></ToastContainer>
-           </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Main;
