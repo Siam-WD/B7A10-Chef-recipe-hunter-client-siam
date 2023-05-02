@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
   const { handleCreateUser, user } = useContext(AuthContext);
@@ -9,18 +10,18 @@ const Register = () => {
       event.preventDefault();
       const form = event.target;
       const dName = form.name.value;
-      const  photoUrl = form.photoUrl.value;
+      const photoUrl = form.photo_url.value;
       const email = form.email.value;
       const password = form.password.value;
       
-      console.log(name, email, password);
+      console.log(email, password);
 
       handleCreateUser(email, password)
        .then(result => {
         const createdUser = result.user;
         console.log(createdUser);
         updateProfile(createdUser, {
-          displayName: dName ,
+          displayName: dName,
           photoURL: photoUrl
         })
        })
@@ -33,7 +34,7 @@ const Register = () => {
   }
     
     return (
-        <div className="relative mt-5 flex flex-col justify-center min-h-screen overflow-hidden">
+        <div className="relative mt-5 flex flex-col justify-center max-h-screen overflow-hidden">
         <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-black-700 uppercase">
             Please Register
@@ -61,7 +62,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
-                name="photoUrl"
+                name="photo_url"
                 placeholder="Photo URL"
                 required
                 className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"

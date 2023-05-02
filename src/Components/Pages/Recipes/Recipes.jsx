@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Recipes = () => {
+  useEffect(()=> {
+    window.scrollTo(0, 0);
+  }, [])
   const [recipes, setRecipes] = useState([]);
 
   const chef = useLoaderData();

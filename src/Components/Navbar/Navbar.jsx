@@ -11,7 +11,8 @@ const Navbar = () => {
 
 
   return (
-    <div className="navbar  text-black">
+    <div>
+      <div className="navbar  text-black shadow">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -66,7 +67,10 @@ const Navbar = () => {
         <>
           {
             user
-            ? <button onClick={handleLogout} className="ml-5 btn btn-warning">Logout</button>
+            ? <>
+            <img className="h-12 rounded-full border-2 border-yellow-400" src={user?.photoURL} alt="" />
+            <button onClick={handleLogout} className="ml-5 btn btn-warning">Logout</button> 
+            </> 
             : <Link to="/login">
             <button className="btn btn-warning">Login</button>
           </Link>
@@ -76,6 +80,9 @@ const Navbar = () => {
         </>
         
       </div>
+      
+    </div>
+    
     </div>
   );
 };
