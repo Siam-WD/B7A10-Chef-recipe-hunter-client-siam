@@ -1,57 +1,61 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Login = () => {
-  const { user, handleLogin , handleGoogleSignin } = useContext(AuthContext);
-  console.log(user);
+  const { user, handleLogin, handleGoogleSignin, handleGithubSignin  } = useContext(AuthContext);
+
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from =  location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
-    
-
     handleLogin(email, password)
-      .then(result => {
+      .then((result) => {
         const loggedUser = result.user;
         navigate(from, { replace: true });
-        
       })
-      .catch(error => console.log(error))
-    
+      .catch((error) => console.log(error));
   };
 
   const handleGoogleLogin = () => {
     handleGoogleSignin()
-    .then(result => {
-      const user = result.user;
-      navigate(from, { replace: true });
-      
-    })
-    .catch(error => {console.error(error);})
+      .then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
-  }
+  const handleGithubLogin = () => {
+    handleGithubSignin()
+      .then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
-    return (
-         <div className="relative mt-5 flex flex-col justify-center  min-h-screen overflow-hidden">
+  return (
+    <div className="relative mt-5 flex flex-col justify-center  min-h-screen overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-black-700 uppercase">
           Sign in
         </h1>
         <form onSubmit={handleSubmit} className="mt-6">
           <div className="mb-2">
-            <label
-              
-              className="block text-sm font-semibold text-gray-800"
-            >
+            <label className="block text-sm font-semibold text-gray-800">
               Email
             </label>
             <input
@@ -63,10 +67,7 @@ const Login = () => {
             />
           </div>
           <div className="mb-2">
-            <label
-             
-              className="block text-sm font-semibold text-gray-800"
-            >
+            <label className="block text-sm font-semibold text-gray-800">
               Password
             </label>
             <input
@@ -90,28 +91,30 @@ const Login = () => {
           <div className="absolute px-5 bg-white">Or</div>
         </div>
         <div className="flex mt-4 gap-x-2">
-          <button onClick={handleGoogleLogin}
+          <button
+            onClick={handleGoogleLogin}
             type="button"
             className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-yellow-600"
           >
-           <FaGoogle></FaGoogle>
+            <FaGoogle></FaGoogle>
           </button>
-          <button className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-yellow-600">
-          <FaGithub></FaGithub>
+          <button onClick={handleGithubLogin} className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-yellow-600">
+            <FaGithub></FaGithub>
           </button>
-          
         </div>
 
         <p className="mt-8 text-xs font-light text-center text-gray-700">
-          
           Don't have an account?
-          <Link to="/register" className="font-medium text-yellow-600 hover:underline">
+          <Link
+            to="/register"
+            className="font-medium text-yellow-600 hover:underline"
+          >
             Register
           </Link>
         </p>
       </div>
     </div>
-    );
+  );
 };
 
 export default Login;
