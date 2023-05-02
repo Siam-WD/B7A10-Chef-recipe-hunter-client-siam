@@ -7,9 +7,9 @@ const OurChef = () => {
 
   return (
     <div className="md:mx-10 mx-2">
-      <h2 className="text-6xl my-10 text-center font-bold">Our Chefs</h2>
+      <h2 className="md:text-6xl text-2xl my-10 text-center font-bold">Our Chefs</h2>
 
-      <div className="md:grid grid-cols-3 gap-10 my-20">
+      <div className="md:grid grid-cols-3 gap-10 md:my-20">
         {chefs.map((chef) => (
           <ChefCard key={chef.id} chef={chef}></ChefCard>
         ))}
