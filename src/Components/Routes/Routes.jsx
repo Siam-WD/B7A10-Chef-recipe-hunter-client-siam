@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>fetch('https://flavour-fusion-server.vercel.app/chefs')
+        loader: () =>fetch('http://localhost:5000/chefs')
       },
       {
         path: "/login",
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/recipes/:id",
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-        loader: ({params})=>fetch(`https://flavour-fusion-server.vercel.app/recipes/${params.id}`)
+        loader: ({params})=>fetch(`http://localhost:5000/recipes/${params.id}`)
       }
     ],
   },

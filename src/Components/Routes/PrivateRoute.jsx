@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-        <div class="w-8 mx-auto mt-20 h-8 border-4 border-t-blue-500 border-solid rounded-full animate-spin"></div>
+        <div className="w-8 mx-auto mt-20 h-8 border-4 border-t-blue-500 border-solid rounded-full animate-spin"></div>
 
     );
   }

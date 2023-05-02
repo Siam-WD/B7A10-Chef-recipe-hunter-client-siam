@@ -3,15 +3,8 @@ import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-const   ChefCard = ({ chef }) => {
-
-  const [chefInfo, setShefInfo] = useState(null);
-
-  const handleViewRecipe = () => { 
-    setShefInfo(chef);
-  console.log(chef);
-  }
-
+const ChefCard = ({ chef }) => {
+  
 
   const {
     id,
@@ -39,7 +32,9 @@ const   ChefCard = ({ chef }) => {
 
           <div className="card-actions justify-between items-center">
             <Link to={`/recipes/${id}`}>
-              <button onClick={handleViewRecipe} className="btn btn-warning">View Recipes</button>
+              <button className="btn btn-warning">
+                View Recipes
+              </button>
             </Link>
 
             <div className="badge badge-outline gap-2">

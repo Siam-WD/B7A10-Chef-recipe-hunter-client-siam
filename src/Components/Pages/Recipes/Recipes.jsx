@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const Recipes = () => {
-  useEffect(()=> {
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
-  const [recipes, setRecipes] = useState([]);
+  }, []);
 
   const chef = useLoaderData();
-
-  useEffect(() => {
-    fetch("https://flavour-fusion-server.vercel.app/recipes/")
-      .then((res) => res.json())
-      .then((data) => setRecipes(data));
-  });
+  const chefRecipes = chef.recipes;
 
   return (
     <div>
@@ -28,16 +22,25 @@ const Recipes = () => {
           />
         </div>
         <div className="w-6/12 mx-auto mb-10">
-        <h2 className="text-5xl my-9 font-bold">{chef?.chefName}</h2>
-        <p><span className="font-bold">About: </span>{chef?.chefBio}</p>
-        <p className="font-semibold mt-4">I have <span className="font-bold">{chef?.numberOfRecipes}</span> recipes</p>
-        <p className="font-semibold">My Experience in this profession <span className="font-bold"> {chef?.yearsOfExperience}</span> years</p>
+          <h2 className="text-5xl my-9 font-bold">{chef?.chefName}</h2>
+          <p>
+            <span className="font-bold">About: </span>
+            {chef?.chefBio}
+          </p>
+          <p className="font-semibold mt-4">
+            I have <span className="font-bold">{chef?.numberOfRecipes}</span>{" "}
+            recipes
+          </p>
+          <p className="font-semibold">
+            My Experience in this profession{" "}
+            <span className="font-bold"> {chef?.yearsOfExperience}</span> years
+          </p>
         </div>
       </div>
       <hr />
       <div>
         <h2 className="font-bold text-4xl text-center mt-10">My Recipes</h2>
-        {recipes.map((recipe) => (
+        {chefRecipes.map((recipe) => (
           <RecipeCard key={recipe._id} recipe={recipe}></RecipeCard>
         ))}
       </div>
