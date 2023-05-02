@@ -13,6 +13,8 @@ const Register = () => {
       const photoUrl = form.photo_url.value;
       const email = form.email.value;
       const password = form.password.value;
+
+      // password validation
       
       console.log(email, password);
 

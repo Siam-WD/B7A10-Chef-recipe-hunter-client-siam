@@ -2,10 +2,7 @@ import React, { createContext, useState } from "react";
 import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-
 const ChefCard = ({ chef }) => {
-  
-
   const {
     id,
     chefName,
@@ -31,10 +28,8 @@ const ChefCard = ({ chef }) => {
           </p>
 
           <div className="card-actions justify-between items-center">
-            <Link to={`/recipes/${id}`}>
-              <button className="btn btn-warning">
-                View Recipes
-              </button>
+            <Link to={`/chefRecipes/${id}`}>
+              <button className="btn btn-warning">View Recipes</button>
             </Link>
 
             <div className="badge badge-outline gap-2">

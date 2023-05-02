@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "/recipes/:id",
+        path: "/chefRecipes/:id",
         element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
         loader: ({params})=>fetch(`https://flavour-fusion-server-siam-wd.vercel.app/recipes/${params.id}`)
       }
