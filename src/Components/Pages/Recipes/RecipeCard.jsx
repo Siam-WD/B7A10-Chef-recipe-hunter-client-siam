@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
 
 const RecipeCard = ({ recipe }) => {
     const [isDisabled, setIsDisabled] = useState(false);
@@ -34,7 +37,9 @@ const RecipeCard = ({ recipe }) => {
           <span className="text-xl font-bold">Cooking Methode:</span>{" "}
           {cookingMethod}
         </p>
+        
         <div className="card-actions justify-end">
+          <div className="mr-auto flex items-center mt-5"><Rating style={{ maxWidth: 100 }} value={rating} readOnly /> {rating}</div>
           <button onClick={handleFavourite} disabled={isDisabled} className="btn btn-warning">Favourite</button>
         </div>
       </div>

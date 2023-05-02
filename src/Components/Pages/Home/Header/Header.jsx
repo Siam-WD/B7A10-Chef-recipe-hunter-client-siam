@@ -11,7 +11,7 @@ const Header = () => {
   const [slides, setSlides] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/slides")
+    fetch("https://flavour-fusion-server.vercel.app/slides")
       .then((res) => res.json())
       .then((data) => setSlides(data.data));
   }, []);
