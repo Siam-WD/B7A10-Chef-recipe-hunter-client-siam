@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement: <ErrorPage></ErrorPage>,
+    // errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -36,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/terms",
+        element: <h2>Terms and Condition page coming soon...</h2>,
       },
       {
         path: "/chefRecipes/:id",

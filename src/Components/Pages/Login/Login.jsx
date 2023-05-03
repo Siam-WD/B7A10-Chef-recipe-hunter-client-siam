@@ -75,7 +75,7 @@ const Login = () => {
               name="email"
               placeholder="Email"
               required
-              className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
@@ -87,14 +87,14 @@ const Login = () => {
               name="password"
               placeholder="password"
               required
-              className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
-          <Link to="#" className="text-xs text-yellow-600 hover:underline">
+          <Link to="#" className="text-xs text-orange-600 hover:underline">
             Forget Password?
           </Link>
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-400 focus:outline-none focus:bg-yellow-400">
+            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-orange-500 rounded-md hover:bg-orange-400 focus:outline-none focus:bg-orange-400">
               Login
             </button>
           </div>
@@ -106,11 +106,11 @@ const Login = () => {
           <button
             onClick={handleGoogleLogin}
             type="button"
-            className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-yellow-600"
+            className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-orange-600"
           >
             <FaGoogle></FaGoogle>
           </button>
-          <button onClick={handleGithubLogin} className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-yellow-600">
+          <button onClick={handleGithubLogin} className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-orange-600">
             <FaGithub></FaGithub>
           </button>
         </div>
@@ -119,7 +119,7 @@ const Login = () => {
           Don't have an account?
           <Link
             to="/register"
-            className="font-medium text-yellow-600 hover:underline"
+            className="font-medium text-orange-600 hover:underline"
           >
             Register
           </Link>

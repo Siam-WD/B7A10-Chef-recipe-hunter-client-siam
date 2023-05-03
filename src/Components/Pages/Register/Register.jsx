@@ -9,6 +9,7 @@ const Register = () => {
   const { handleCreateUser, user } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,8 +39,7 @@ const Register = () => {
       setError("Password must be at least 6 characters");
       toast.error("Password must be at least 6 characters");
       return;
-    }
-    else if (password !== confirm) {
+    } else if (password !== confirm) {
       setError("Password not matched");
       toast.error("Password not matched");
       return;
@@ -64,6 +64,10 @@ const Register = () => {
     console.log(email, password, displayName);
   };
 
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
+
   return (
     <div className="relative mt-5 flex flex-col justify-center max-h-screen overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
@@ -79,7 +83,7 @@ const Register = () => {
               type="text"
               name="name"
               placeholder="Your Name"
-              className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
@@ -91,7 +95,7 @@ const Register = () => {
               name="photo_url"
               placeholder="Photo URL"
               required
-              className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
@@ -103,7 +107,7 @@ const Register = () => {
               name="email"
               placeholder="Email"
               required
-              className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
@@ -115,7 +119,7 @@ const Register = () => {
               name="password"
               placeholder="password"
               required
-              className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
@@ -127,23 +131,43 @@ const Register = () => {
               name="confirm"
               placeholder="Confirm Password"
               required
-              className="block w-full px-4 py-2 mt-2 text-yellow-700 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
 
+          <div className="mb-3 ">
+            <label htmlFor="agree-to-terms">
+              <input
+                type="checkbox"
+                name="agree-to-terms"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2">
+                I agree to the
+                <Link className="text-primary ml-2" to="/terms">
+                  terms and conditions
+                </Link>
+              </span>
+            </label>
+          </div>
+
           <div className="mt-6">
-            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-400 focus:outline-none focus:bg-yellow-400">
-              Submit
+            <button
+              className="btn btn-primary w-full tracking-wide "
+              type="submit"
+              disabled={!isChecked}
+            >
+              Register
             </button>
           </div>
         </form>
 
         <p className="mt-8 text-xs font-light text-center text-gray-700">
-          {" "}
-          Already have an account?{" "}
+          Already have an account?
           <Link
             to="/login"
-            className="font-medium text-yellow-600 hover:underline"
+            className="font-medium text-orange-600 hover:underline"
           >
             Login
           </Link>
