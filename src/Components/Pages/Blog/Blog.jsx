@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { FaDownload } from "react-icons/fa";
+import { useLoaderData } from "react-router-dom";
 import ReactToPdf from "react-to-pdf";
 const Blog = () => {
   const ref = useRef();
@@ -8,6 +9,9 @@ const Blog = () => {
     unit: "in",
     format: [17, 11],
   };
+
+ 
+
   return (
     <div>
       <div className="mt-6 text-end mr-6">

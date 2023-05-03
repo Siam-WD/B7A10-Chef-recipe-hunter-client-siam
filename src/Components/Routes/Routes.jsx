@@ -19,7 +19,26 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>fetch('https://flavour-fusion-server-siam-wd.vercel.app/chefs')
+        // loader: () =>fetch('https://flavour-fusion-server-siam-wd.vercel.app/chefs')
+        
+        loader: async () => {
+          try {
+            const slideData = await fetch('https://flavour-fusion-server-siam-wd.vercel.app/slides');
+            const slides = await slideData.json();
+
+            const chefsData = await fetch('https://flavour-fusion-server-siam-wd.vercel.app/chefs');
+            const chefs = await chefsData.json();
+    
+    
+            return {
+              slides: slides,
+              chefs: chefs,
+            };
+          } catch (err) {
+            console.log(err);
+          }
+        }
+
       },
       {
         path: "/login",
@@ -32,6 +51,7 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+       
       },
       {
         path: "/contact",

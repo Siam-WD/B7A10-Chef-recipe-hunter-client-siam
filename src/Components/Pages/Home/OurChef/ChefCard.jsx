@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import LazyLoad from 'react-lazy-load';
 
 const ChefCard = ({ chef }) => {
   const {
@@ -16,7 +17,12 @@ const ChefCard = ({ chef }) => {
     <>
       <div className="card w-96 mx-auto bg-base-100 shadow-xl">
         <figure>
-          <img className="h-58" src={chefPicture} alt="Chef" />
+
+        <LazyLoad  width={400} threshold={0.95}>
+      <img src={chefPicture} />
+    </LazyLoad>
+
+          {/* <img className="h-58" src={chefPicture} alt="Chef" /> */}
         </figure>
         <div className="card-body">
           <h2 className="card-title">{chefName}</h2>

@@ -48,7 +48,7 @@ const Register = () => {
     handleCreateUser(email, password)
       .then((result) => {
         const createdUser = result.user;
-        console.log(createdUser);
+
         updateProfile(createdUser, {
           displayName: dName,
           photoURL: photoUrl,
@@ -61,7 +61,7 @@ const Register = () => {
       })
       .catch((error) => setError(error.message));
 
-    console.log(email, password, displayName);
+    
   };
 
   const handleCheckboxChange = (event) => {
@@ -69,7 +69,7 @@ const Register = () => {
   };
 
   return (
-    <div className="relative mt-5 flex flex-col justify-center max-h-screen overflow-hidden">
+    <div className="relative mt-5 flex flex-col justify-center  overflow-hidden">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-black-700 uppercase">
           Please Register
@@ -163,16 +163,16 @@ const Register = () => {
           </div>
         </form>
 
-        <p className="mt-8 text-xs font-light text-center text-gray-700">
+        <p className="mt-8  font-light text-center text-gray-700">
           Already have an account?
           <Link
             to="/login"
-            className="font-medium text-orange-600 hover:underline"
+            className="font-medium ml-2 text-orange-600 hover:underline"
           >
             Login
           </Link>
         </p>
-        <div className="text-center mt-5">
+        <div className="text-center my-5">
           <p className="text-red-700">{error}</p>
           <p className="text-green-700">{success}</p>
         </div>

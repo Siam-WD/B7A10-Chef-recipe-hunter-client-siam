@@ -6,15 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Slide from "./Slide";
+import { useLoaderData } from "react-router-dom";
 
 const Header = () => {
-  const [slides, setSlides] = useState([]);
 
-  useEffect(() => {
-    fetch("https://flavour-fusion-server-siam-wd.vercel.app/slides")
-      .then((res) => res.json())
-      .then((data) => setSlides(data.data));
-  }, []);
+  const {slides} = useLoaderData();
+
 
   return (
     <div>

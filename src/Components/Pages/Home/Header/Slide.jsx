@@ -1,4 +1,5 @@
 import React from "react";
+import ReactTypingEffect from "react-typing-effect";
 
 const Slide = ({ slide }) => {
   const { id, name, thumbnail, details } = slide;
@@ -17,7 +18,9 @@ const Slide = ({ slide }) => {
           <h2 className="md:text-7xl text-2xl font-bold  text-shadow mb-10">
             {name}
           </h2>
-          <p className="mx-auto md:text-lg w-4/6">{details}</p>
+          <p className="mx-auto md:text-lg w-4/6">
+            <ReactTypingEffect text={details} speed={50} />
+          </p>
         </div>
       </div>
     </div>
