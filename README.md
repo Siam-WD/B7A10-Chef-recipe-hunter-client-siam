@@ -16,16 +16,15 @@ Flavour Fusion is built using the following technologies:
 ## **Installation** ##
 To install Flavour Fusion on your local machine, follow these steps:
 
-## __Clone__ ## the repository: git clone https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam
+__Clone__ the repository: git clone https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam
 * Install dependencies: npm install
 * Start the development server: npm start
 
 ## __Contributing__ ##
 We welcome contributions to Flavour Fusion! If you'd like to contribute, please follow these steps:
 
-## **Fork** ## the [repository](https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam)
+**Fork** the [repository](https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam) https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam
 
- __https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam__
 Create a new branch for your feature or bug fix: git checkout -b my-new-feature
 Make your changes and commit them: git commit -m "Add some feature"
 Push your changes to your fork: git push origin my-new-feature
