@@ -17,8 +17,8 @@ Flavour Fusion is built using the following technologies:
 To install Flavour Fusion on your local machine, follow these steps:
 
 __Clone__ the repository: git clone https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam
-* Install dependencies: npm install
-* Start the development server: npm start
+* Install dependencies: `code(npm install)` 
+* Start the development server: `code(npm start)`
 
 ## __Contributing__ ##
 We welcome contributions to Flavour Fusion! If you'd like to contribute, please follow these steps:
