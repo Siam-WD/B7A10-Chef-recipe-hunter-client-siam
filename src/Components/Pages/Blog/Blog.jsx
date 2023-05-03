@@ -10,8 +10,6 @@ const Blog = () => {
     format: [17, 11],
   };
 
- 
-
   return (
     <div>
       <div className="mt-6 text-end mr-6">

@@ -16,15 +16,17 @@ const Feedback = () => {
             <div className="mt-8">
               <blockquote>
                 <p className="text-xl text-black dark:text-white">
-                  “Flavours Fusion has a great collection of recipes, but it would be helpful to have a search bar or filter options to easily find specific recipes. This would improve the user experience and make it easier for users to navigate through the website.”
+                  “Flavours Fusion has a great collection of recipes, but it
+                  would be helpful to have a search bar or filter options to
+                  easily find specific recipes. This would improve the user
+                  experience and make it easier for users to navigate through
+                  the website.”
                 </p>
               </blockquote>
               <p className="text-lg font-semibold text-black dark:text-white mt-7">
                 John Doe
               </p>
-              <p className="mt-1 text-base text-gray-600">
-                Frontend Developer 
-              </p>
+              <p className="mt-1 text-base text-gray-600">Frontend Developer</p>
             </div>
           </div>
         </div>
@@ -40,15 +42,17 @@ const Feedback = () => {
             <div className="mt-8">
               <blockquote>
                 <p className="text-xl text-black dark:text-white">
-                  “Flavour Fusion design looks visually appealing, but some of the recipe descriptions could use more details, such as cooking times and serving sizes. Adding this information would make it easier for users to plan their meals and cook the recipes more efficiently.”
+                  “Flavour Fusion design looks visually appealing, but some of
+                  the recipe descriptions could use more details, such as
+                  cooking times and serving sizes. Adding this information would
+                  make it easier for users to plan their meals and cook the
+                  recipes more efficiently.”
                 </p>
               </blockquote>
               <p className="text-lg font-semibold text-black dark:text-white mt-7">
                 Ketty Perry
               </p>
-              <p className="mt-1 text-base text-gray-600">
-                UI/UX Designer
-              </p>
+              <p className="mt-1 text-base text-gray-600">UI/UX Designer</p>
             </div>
           </div>
         </div>

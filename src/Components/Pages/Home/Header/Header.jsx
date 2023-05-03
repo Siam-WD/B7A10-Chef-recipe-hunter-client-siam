@@ -9,9 +9,7 @@ import Slide from "./Slide";
 import { useLoaderData } from "react-router-dom";
 
 const Header = () => {
-
-  const {slides} = useLoaderData();
-
+  const { slides } = useLoaderData();
 
   return (
     <div>
@@ -26,16 +24,12 @@ const Header = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        
         {slides.map((slide) => (
-            <SwiperSlide>
-              <Slide key={slide.id} slide={slide}></Slide>
-            </SwiperSlide>
-          ))}
-
-        
+          <SwiperSlide>
+            <Slide key={slide.id} slide={slide}></Slide>
+          </SwiperSlide>
+        ))}
       </Swiper>
-      
     </div>
   );
 };

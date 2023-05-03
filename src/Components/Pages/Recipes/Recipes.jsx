@@ -39,10 +39,12 @@ const Recipes = () => {
       </div>
       <hr />
       <div>
-        <h2 className="font-bold text-4xl text-center mt-10">My Recipes</h2>
-        {chefRecipes.map((recipe) => (
+        <h2 className="font-bold text-4xl text-center my-10 ">My Recipes</h2>
+       <div className="grid grid-cols-2 gap-10 mx-auto w-10/12">
+       {chefRecipes.map((recipe) => (
           <RecipeCard key={recipe._id} recipe={recipe}></RecipeCard>
         ))}
+       </div>
       </div>
     </div>
   );

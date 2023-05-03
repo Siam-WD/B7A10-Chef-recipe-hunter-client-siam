@@ -19,7 +19,7 @@ const Slide = ({ slide }) => {
             {name}
           </h2>
           <p className="mx-auto md:text-lg w-4/6">
-            <ReactTypingEffect text={details} speed={50} />
+            <ReactTypingEffect text={details} speed={40} />
           </p>
         </div>
       </div>
