@@ -8,12 +8,13 @@ import Blog from "../Pages/Blog/Blog";
 import Recipes from "../Pages/Recipes/Recipes";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../Pages/Error/ErrorPage";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/chefRecipes/:id",

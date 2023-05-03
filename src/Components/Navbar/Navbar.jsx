@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
@@ -36,30 +36,30 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/" activeClassName="text-red-400">Home</NavLink>
             </li>
             <li>
-              <Link to="/blog">Blog</Link>
+              <NavLink to="/blog" activeClassName="text-red-400">Blog</NavLink>
             </li>
             <li>
-              <Link to="#">Contact</Link>
+              <NavLink to="#" activeClassName="text-red-400">Contact</NavLink>
             </li>
           </ul>
         </div>
         <Link to="/">
-          <h2 className="md:text-2xl text-lg font-bold  md:ml-10">Flavour Fusion</h2>
+          <h2 className="md:text-3xl text-lg font-bold text-primary md:ml-10">Flavour Fusion</h2>
         </Link>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-10">
-          <li>
-            <Link to="/">Home</Link>
+          <li className="">
+            <NavLink to="/" activeClassName="text-red-400">Home</NavLink>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <NavLink to="/blog" activeClassName="text-red-400">Blog</NavLink>
           </li>
           <li>
-            <Link to="#">Contact</Link>
+            <NavLink to="/contact" activeClassName="text-red-400" >Contact</NavLink>
           </li>
         </ul>
       </div>
@@ -68,11 +68,11 @@ const Navbar = () => {
           {
             user
             ? <>
-            <img className="h-12 rounded-full border-2 border-yellow-400" src={user?.photoURL} alt="" />
-            <button onClick={handleLogout} className="ml-5 btn btn-warning">Logout</button> 
+            { user.photoURL && <img className="h-12 rounded-full border-2 border-yellow-400" src={user?.photoURL} alt="" /> }
+            <button onClick={handleLogout} className="ml-5 btn btn-primary">Logout</button>
             </> 
             : <Link to="/login">
-            <button className="btn btn-warning">Login</button>
+            <button className="btn btn-primary">Login</button>
           </Link>
           }
           

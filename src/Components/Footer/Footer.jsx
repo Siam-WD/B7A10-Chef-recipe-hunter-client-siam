@@ -1,9 +1,12 @@
 import React from "react";
 
 const Footer = () => {
+  const handleSubscribe = event => {
+    event.preventDefault();
+  }
   return (
     <div>
-      <footer className="container mx-auto px-10 md:px-0 py-10">
+      <footer className="container mx-auto px-10 md:px-0 py-10 mt-20">
         <div className="mb-16 md:mx-36 flex flex-col md:flex-row md:items-center justify-between">
          
           <div className="grow mt-4 md:mt-0 md:ml-12">
@@ -117,19 +120,18 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center lg:space-x-12 w-[100%]">
           <div className="mb-4">
             <h4 className="font-medium text-xl md:text-[26px] md:leading-[30.3px] lg:text-[31px] lg:leading-[40.3px] text-gray-700 dark:text-gray-100">
-              Newsletter
+              Flavour Fusion
             </h4>
             <p className="text-sm md:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium mt-4 w-[320px] md:w-[391px]">
-              When your team needs to kick off a project, and more, DevUI
-              Covered You.
+              Send us email
             </p>
-            <form className="mt-4 flex items-center space-x-2">
+            <form onSubmit={handleSubscribe} className="mt-4 flex items-center space-x-2">
               <input
                 className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                 type="email"
                 placeholder="Email"
               />
-              <button className="active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-1 focus:ring-indigo-400 focus:ring-offset-1 dark:hover:bg-indigo-700 dark:hover:text-gray-100 disabled:opacity-50 dark:focus:ring-indigo-400 disabled:pointer-events-none dark:focus:ring-offset-gray-900 bg-indigo-600 dark:bg-indigo-600 text-white hover:bg-indigo-700 h-10 py-2 px-4">
+              <button className="btn btn-primary">
                 Subscribe
               </button>
             </form>

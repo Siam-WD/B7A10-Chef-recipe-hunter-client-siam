@@ -45,7 +45,7 @@ const RecipeCard = ({ recipe }) => {
           <button
             onClick={handleFavourite}
             disabled={isDisabled}
-            className="btn btn-warning"
+            className="btn btn-primary"
           >
             Favourite
           </button>

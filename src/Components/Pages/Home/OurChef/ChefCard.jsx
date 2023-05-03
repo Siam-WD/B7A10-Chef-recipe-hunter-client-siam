@@ -14,7 +14,7 @@ const ChefCard = ({ chef }) => {
   } = chef;
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 mx-auto bg-base-100 shadow-xl">
         <figure>
           <img className="h-58" src={chefPicture} alt="Chef" />
         </figure>
@@ -29,7 +29,7 @@ const ChefCard = ({ chef }) => {
 
           <div className="card-actions justify-between items-center">
             <Link to={`/chefRecipes/${id}`}>
-              <button className="btn btn-warning">View Recipes</button>
+              <button className="btn btn-primary">View Recipes</button>
             </Link>
 
             <div className="badge badge-outline gap-2">

@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { user, handleLogin, handleGoogleSignin, handleGithubSignin  } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
 
   const navigate = useNavigate();
@@ -21,8 +25,11 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         navigate(from, { replace: true });
+        event.target.reset();
+        setSuccess("User Login successfully");
+        toast.success("User Login successfully");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
 
   const handleGoogleLogin = () => {
@@ -30,9 +37,11 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
+        setSuccess("User Login successfully");
+        toast.success("User Login successfully");
       })
       .catch((error) => {
-        console.error(error);
+        setError(error.message);
       });
   };
 
@@ -41,9 +50,12 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
+        setSuccess("User Login successfully");
+        toast.success("User Login successfully");
+
       })
       .catch((error) => {
-        console.error(error);
+        setError(error.message);
       });
   };
 
@@ -112,6 +124,10 @@ const Login = () => {
             Register
           </Link>
         </p>
+        <div className="text-center mt-5">
+          <p className="text-red-700">{error}</p>
+          <p className="text-green-700">{success}</p>
+        </div>
       </div>
     </div>
   );

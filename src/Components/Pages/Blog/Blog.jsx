@@ -26,7 +26,7 @@ const Blog = () => {
       </div>
       <div ref={ref}>
         <BlogDisplay></BlogDisplay>
-      </div>
+      </div>  
     </div>
   );
 };

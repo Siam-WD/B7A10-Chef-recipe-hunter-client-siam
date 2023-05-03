@@ -1,20 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
   return (
-    <div className="flex flex-col h-screen">
-      <div className="flex-grow"></div>
-      <div className="flex justify-center items-center h-48">
-        <div className="w-64 h-16 bg-red-500 rounded-lg flex justify-center items-center">
-          <h1 className="text-white font-bold text-3xl">Oops!</h1>
+    <div className="py-10">
+      <div className="text-center">
+        <p className="text-base font-semibold text-indigo-600">404</p>
+        <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-200 sm:text-5xl">
+          Page not found
+        </h1>
+        <p className="mt-6 text-base leading-7 text-gray-600 dark:text-gray-400">
+          Sorry, we couldn&apos:t find the page you&apos;re looking for.
+        </p>
+        <div className="flex items-center justify-center mt-6 gap-x-3">
+          <Link to="/">
+            <button className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-indigo-500 ">
+              Go Home
+            </button>
+          </Link>
         </div>
       </div>
-      <div className="flex-grow flex justify-center items-center">
-        <p className="text-gray-500 text-lg">
-          Something went wrong. Please try again later.
-        </p>
-      </div>
-      <div className="flex-grow"></div>
     </div>
   );
 };
