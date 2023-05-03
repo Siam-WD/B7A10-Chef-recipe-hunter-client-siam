@@ -8,7 +8,7 @@ Flavour Fusion is a website that allows users to search for and share recipes, a
 ## **Technologies Used** ##
 Flavour Fusion is built using the following technologies:
 
-- HTML, CSS, and JavaScript for the front-end
+- HTML, CSS (tailwind), and JavaScript(React) for the front-end
 - React
 - Node.js and Express for the back-end
 - Firebase for data storage
@@ -18,7 +18,6 @@ To install Flavour Fusion on your local machine, follow these steps:
 
 __Clone__ the repository: git clone https://github.com/Siam-WD/B7A10-Chef-recipe-hunter-client-siam
 * Install dependencies: `npm install` 
-* Start the development server: `npm start`
 
 ## __Contributing__ ##
 We welcome contributions to Flavour Fusion! If you'd like to contribute, please follow these steps:
