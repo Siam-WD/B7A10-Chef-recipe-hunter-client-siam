@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
 import "react-toastify/dist/ReactToastify.css";
+import { FaThumbsUp } from "react-icons/fa";
 
 const Recipes = () => {
   useEffect(() => {
@@ -12,7 +13,7 @@ const Recipes = () => {
   const chefRecipes = chef.recipes;
 
   return (
-    <div>
+    <div >
       <div className="w-8/12 mx-auto text-center">
         <div className="w-64 h-64 rounded-full overflow-hidden mx-auto my-4">
           <img
@@ -21,8 +22,13 @@ const Recipes = () => {
             alt="chef image"
           />
         </div>
-        <div className="w-6/12 mx-auto mb-10">
-          <h2 className="text-5xl my-9 font-bold">{chef?.chefName}</h2>
+        <div className="md:w-10/12 mx-auto mb-10">
+          <h2 className="text-5xl my-9 font-bold">{chef?.chefName} 
+          <div className="badge badge-outline p-3 ml-5 h-5 gap-2 ">
+          <FaThumbsUp></FaThumbsUp>{chef?.likes}</div>
+          </h2>
+          
+          
           <p>
             <span className="font-bold">About: </span>
             {chef?.chefBio}
@@ -32,7 +38,7 @@ const Recipes = () => {
             recipes
           </p>
           <p className="font-semibold">
-            My Experience in this profession{" "}
+            My Experience in this profession is{" "}
             <span className="font-bold"> {chef?.yearsOfExperience}</span> years
           </p>
         </div>
@@ -40,11 +46,11 @@ const Recipes = () => {
       <hr />
       <div>
         <h2 className="font-bold text-4xl text-center my-10 ">My Recipes</h2>
-       <div className="grid grid-cols-2 gap-10 mx-auto w-10/12">
-       {chefRecipes.map((recipe) => (
-          <RecipeCard key={recipe._id} recipe={recipe}></RecipeCard>
-        ))}
-       </div>
+        <div className="md:grid grid-cols-2 gap-10 mx-auto w-10/12">
+          {chefRecipes.map((recipe) => (
+            <RecipeCard key={recipe._id} recipe={recipe}></RecipeCard>
+          ))}
+        </div>
       </div>
     </div>
   );

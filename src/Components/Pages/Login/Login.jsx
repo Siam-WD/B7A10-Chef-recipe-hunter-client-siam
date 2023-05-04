@@ -106,7 +106,7 @@ const Login = () => {
           <button
             onClick={handleGoogleLogin}
             type="button"
-            className="flex items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-orange-600"
+            className="flex text-green-500 items-center justify-center w-full p-2 border border-gray-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-orange-600"
           >
             <FaGoogle></FaGoogle>
           </button>

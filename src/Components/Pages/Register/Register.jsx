@@ -77,7 +77,7 @@ const Register = () => {
         <form onSubmit={handleRegistration} className="mt-6">
           <div className="mb-2">
             <label className="block text-sm font-semibold text-gray-800">
-              Name
+              Name 
             </label>
             <input
               type="text"
@@ -94,7 +94,6 @@ const Register = () => {
               type="text"
               name="photo_url"
               placeholder="Photo URL"
-              required
               className="block w-full px-4 py-2 mt-2 text-orange-700 bg-white border rounded-md focus:border-orange-400 focus:ring-orange-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>

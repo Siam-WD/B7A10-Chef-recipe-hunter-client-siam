@@ -14,13 +14,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        // loader: () =>fetch('https://flavour-fusion-server-siam-wd.vercel.app/chefs')
-        
         loader: async () => {
           try {
             const slideData = await fetch('https://flavour-fusion-server-siam-wd.vercel.app/slides');

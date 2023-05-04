@@ -1,19 +1,14 @@
 import React from "react";
 
 const Footer = () => {
-  const handleSubscribe = event => {
+  const handleSubscribe = (event) => {
     event.preventDefault();
-  }
+  };
   return (
     <div>
-      <footer className="container mx-auto px-10 md:px-0 py-10 mt-20">
+      <footer className=" bg-orange-200 mx-auto   py-10 mt-20">
         <div className="mb-16 md:mx-36 flex flex-col md:flex-row md:items-center justify-between">
-         
-          <div className="grow mt-4 md:mt-0 md:ml-12">
-            <p className="font-semibold text-base text-gray-500 dark:text-gray-300">
-              © 2023  Flavour Fusion
-            </p>
-          </div>
+          <div className="grow mt-4 md:mt-0 md:ml-12"></div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <span>
               <svg
@@ -125,15 +120,16 @@ const Footer = () => {
             <p className="text-sm md:text-base lg:text-lg text-gray-500 dark:text-gray-400 font-medium mt-4 w-[320px] md:w-[391px]">
               Send us email
             </p>
-            <form onSubmit={handleSubscribe} className="mt-4 flex items-center space-x-2">
+            <form
+              onSubmit={handleSubscribe}
+              className="mt-4 flex items-center space-x-2"
+            >
               <input
                 className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent py-2 px-3 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                 type="email"
                 placeholder="Email"
               />
-              <button className="btn btn-primary">
-                Subscribe
-              </button>
+              <button className="btn btn-primary">Subscribe</button>
             </form>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mt-8 lg:mt-0">
@@ -175,6 +171,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <p className="text-center mt-5 font-semibold text-base text-gray-500 dark:text-gray-300">
+          Copyright © 2023 Flavour Fusion. All Rights Reserved.
+        </p>
       </footer>
     </div>
   );
